@@ -22,7 +22,7 @@ const Article = ({article, setCurrentId}) => {
   return (
    
     <Card className={classes.card}>
-      <CardMedia className={classes.media}  image={article.selectedFile } title={article.title}/>
+      <CardMedia className={classes.media}  image={article.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} title={article.title}/>
       <div className={classes.overlay}>
         <Typography variant="h6" >{article.title}</Typography>
         <Typography variant="body2" >{moment(article.createdAt).fromNow()}</Typography>

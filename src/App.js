@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Form from './components/Form/Form'
+import Layout from './layout';
+import ArticlesList from './components/ArticlesList'
+import {useState} from 'react';
+import Info from './components/Info'
+import ArticleDetail from './components/Articles/ArticleDetail';
 
 function App() {
+  const [currentId, setCurrentId]=useState(0);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Layout>
+      <Routes>
+        <Route exact path="/" element={<ArticlesList/>}/>
+      
+        <Route path="/create" element={<Form currentId={currentId} setCurrentId={setCurrentId}/>}/>
+        <Route path="/info" element={<Info/>}/>
+        <Route path="/create/:id" element={<Form currentId={currentId}/>}/>
+        <Route exact path="/Articles/:id" element={<ArticleDetail/>} />
+        
+        
+      </Routes>
+      </Layout>
+    </Router>
   );
 }
 

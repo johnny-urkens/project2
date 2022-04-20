@@ -30,7 +30,7 @@ import { useMemo } from 'react';
   },[currentId,dispatch]);
 
   
-  const [artsPerPage] = useState(7);
+  const [artsPerPage] = useState(10);
   const [currentPage, setCurrenPage]= useState(1);
   const paginate = (pageNumber)=> setCurrenPage(pageNumber);
 

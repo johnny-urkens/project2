@@ -1,5 +1,5 @@
 import * as api from '../api/index'
-import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE, FETCH_ONE } from '../constants/actionTypes';
+import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes';
 
 export const getArticles = ()=> async (dispatch) => {
     try {

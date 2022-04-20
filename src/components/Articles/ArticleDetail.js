@@ -19,10 +19,10 @@ const ArticleDetail = () => {
   });
   const classes = useStyles();
 
-  const dispatch = useDispatch();
+  
   const {id} = useParams();
   
-  const [detailId, setDetailId] =useState(id)
+  const [detailId] =useState(id)
   const article = useSelector((state) => (detailId ? state.articles.find((content) => content._id === detailId): null ));
   
 

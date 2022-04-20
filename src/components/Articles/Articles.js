@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React from 'react'
 import Article from './Article/Article'
 import useStyles from './styles';
 import { useSelector } from 'react-redux';

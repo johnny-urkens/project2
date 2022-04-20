@@ -1,6 +1,6 @@
-﻿import React from 'react';
+﻿import React from 'react'
 
-const WeatherItem = (props) => {
+function WeatherItem(props) {
     var cardStyle = {
         textAlign: 'center',
         padding: 20,
@@ -24,13 +24,13 @@ const WeatherItem = (props) => {
                 {props.temp} °C - {props.weather}
             </div>
             <img style={imageStyle}
-                 alt="tile"
-                 src={"https://koenvangeel.pythonanywhere.com/static/01n.png"} />
+                alt="tile"
+                src={"https://koenvangeel.pythonanywhere.com/static/01n.png"} />
             <div className="card-section" style={textStyle}>
                 <p>{props.city} - {props.date}</p>
             </div>
         </div>
 
     );
-    }
+}
 export default WeatherItem;

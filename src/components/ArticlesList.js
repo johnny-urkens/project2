@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
-import { BrowserRouter, Routes, Link, useNavigate } from 'react-router-dom';
-import {Container, AppBar, Typography, Grow, Grid} from '@material-ui/core';
+
+import {Container, Grow, Grid} from '@material-ui/core';
 import Articles from './Articles/Articles';
-import useStyles from './Articles/styles';
+
 import {getArticles} from '../actions/articles'
 import { useDispatch } from 'react-redux';
 import Pagination from './Pagination';
@@ -13,7 +13,7 @@ import { useMemo } from 'react';
 
 
   const Layout = () => {
-  const classes = useStyles();
+  
   
   const [currentId, setCurrentId]=useState(0);
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ import { useMemo } from 'react';
   },[currentId,dispatch]);
 
   
-  const [artsPerPage, setArtsPerPage] = useState(7);
+  const [artsPerPage] = useState(7);
   const [currentPage, setCurrenPage]= useState(1);
   const paginate = (pageNumber)=> setCurrenPage(pageNumber);
 
